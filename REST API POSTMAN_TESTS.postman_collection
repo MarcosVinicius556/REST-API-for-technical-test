@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "1ee5e21b-0848-4a62-a524-b93c1bd5cbc3",
+		"name": "REST API for attornatus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LoadById - Pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pessoa/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadAll - Pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pessoa",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertPessoaComEnderecoNovo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Outro Fulano testessss\",\r\n    \"dataNascimento\": \"29-07-1950\",\r\n    \"enderecos\": [\r\n        {\r\n            \"idEndereco\": 55,\r\n            \"logradouro\": \"Rua teste_20\",\r\n            \"cep\": \"8898239\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"São Paulo\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertPessoaComEnderecoExistente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Outro Fulano testessss\",\r\n    \"dataNascimento\": \"29-07-1950\",\r\n    \"enderecos\": [\r\n        {\r\n            \"idEndereco\": 2,\r\n            \"logradouro\": \"Rua teste_20\",\r\n            \"cep\": \"8898239\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"São Paulo\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertPessoaSemEndereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Outro Fulano testessss\",\r\n    \"dataNascimento\": \"29-07-1950\",\r\n    \"enderecos\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertPessoaComMaisEnderecos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Outro Fulano teste com mais enderecos \",\r\n    \"dataNascimento\": \"29-07-1950\",\r\n    \"enderecos\": [\r\n        {\r\n            \"idEndereco\": 55,\r\n            \"logradouro\": \"Rua teste_1\",\r\n            \"cep\": \"8898432\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"Itajai\"\r\n        },\r\n        {\r\n            \"logradouro\": \"Rua teste_2\",\r\n            \"cep\": \"8898239\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"São Paulo\"\r\n        },\r\n        {\r\n            \"idEndereco\": 1,\r\n            \"logradouro\": \"Rua teste_3\",\r\n            \"cep\": \"8898765\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"Curitiba\"\r\n        },\r\n        {\r\n            \"logradouro\": \"Rua teste_4\",\r\n            \"cep\": \"8898239\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"São Paulo\"\r\n        },\r\n        {\r\n            \"idEndereco\": 5,\r\n            \"logradouro\": \"Rua teste_5\",\r\n            \"cep\": \"8898765\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"Curitiba\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertMaisPessoasSemEndereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"nome\": \"Outro Fulano\",\r\n        \"dataNascimento\": \"29-01-1960\",\r\n        \"enderecos\": []\r\n    },\r\n    {\r\n        \"nome\": \"Outro Beltrano\",\r\n        \"dataNascimento\": \"29-07-1950\",\r\n        \"enderecos\": []\r\n    },\r\n    {\r\n        \"nome\": \"Outro Ciclano testessss\",\r\n        \"dataNascimento\": \"19-10-1999\",\r\n        \"enderecos\": []\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/more",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"more"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertMaisPessoasComEndereco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"nome\": \"Outro Fulano\",\r\n        \"dataNascimento\": \"29-01-1960\",\r\n        \"enderecos\": [\r\n            {\r\n            \"idEndereco\": 55,\r\n            \"logradouro\": \"Rua teste_1\",\r\n            \"cep\": \"8898432\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"Itajai\"\r\n        },\r\n        {\r\n            \"idEndereco\": 22,\r\n            \"logradouro\": \"Rua teste_2\",\r\n            \"cep\": \"8898239\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"São Paulo\"\r\n        }]\r\n    },\r\n    {\r\n        \"nome\": \"Outro Beltrano\",\r\n        \"dataNascimento\": \"29-07-1950\",\r\n        \"enderecos\": []\r\n    },\r\n    {\r\n        \"nome\": \"Outro Ciclano testessss\",\r\n        \"dataNascimento\": \"19-10-1999\",\r\n        \"enderecos\": [\r\n            {\r\n            \"logradouro\": \"Rua teste_1\",\r\n            \"cep\": \"8898432\",\r\n            \"numero\": 1534,\r\n            \"cidade\": \"Itajai\"\r\n        }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/more",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"more"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePessoa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pessoa/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePessoaComEndereco",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Alterando nome do Fulano\",\r\n    \"dataNascimento\": \"29-07-1999\",\r\n    \"enderecos\": [\r\n        {\r\n            \"logradouro\": \"Rua teste_1\",\r\n            \"cep\": \"8898543\",\r\n            \"numero\": 1543,\r\n            \"cidade\": \"Blumenau\"\r\n        },\r\n        {\r\n            \"logradouro\": \"Rua teste_2\",\r\n            \"cep\": \"8898511\",\r\n            \"numero\": 1500,\r\n            \"cidade\": \"Itajai\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePessoaSemEndereco",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Alterando nome do Fulano\",\r\n    \"dataNascimento\": \"29-07-1999\",\r\n    \"enderecos\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePessoaComMaisEndereco",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Alterando nome do Fulano\",\r\n    \"dataNascimento\": \"29-07-1999\",\r\n    \"enderecos\": [\r\n        {\r\n            \"idEndereco\": \"1\",\r\n            \"logradouro\": \"Rua teste_2555\",\r\n            \"cep\": \"8898543\",\r\n            \"numero\": 1543,\r\n            \"cidade\": \"Blumenau\"\r\n        },\r\n        {\r\n            \"logradouro\": \"Rua teste_2\",\r\n            \"cep\": \"8898543\",\r\n            \"numero\": 13,\r\n            \"cidade\": \"Lages\"\r\n        },\r\n        {\r\n            \"logradouro\": \"Rua teste_5\",\r\n            \"cep\": \"8898543\",\r\n            \"numero\": 153,\r\n            \"cidade\": \"Rio de Janeiro\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pessoa/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pessoa",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadAllEnderecoByPessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/endereco/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoadPrincipalByPessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/endereco/principal/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"principal",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertSemPessoaCadastrada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"logradouro\": \"Rua teste_23\",\r\n    \"cep\": \"8898532\",\r\n    \"numero\": 1653,\r\n    \"cidade\": \"Arroio do Silva\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertComPessoaCadastrada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"logradouro\": \"Rua teste_23\",\r\n    \"cep\": \"8898532\",\r\n    \"numero\": 1653,\r\n    \"cidade\": \"Arroio do Silva\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Endereco Existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"logradouro\": \"Rua teste_23ss\",\r\n    \"cep\": \"8898442\",\r\n    \"numero\": 1653,\r\n    \"cidade\": \"Arroio do Silva\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Endereco Inexistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"logradouro\": \"Rua teste_23qwe\",\r\n    \"cep\": \"8898532\",\r\n    \"numero\": 13,\r\n    \"cidade\": \"Arroio do Silva\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Endereco principal com pessoa existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/trocarPrincipal/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"trocarPrincipal",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Endereco principal com pessoa Inexistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/trocarPrincipal/100/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"trocarPrincipal",
+						"100",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Endereco principal com endereco inexistente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/trocarPrincipal/1/100",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"trocarPrincipal",
+						"1",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Endereco principal com endereco existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/endereco/trocarPrincipal/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"endereco",
+						"trocarPrincipal",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
