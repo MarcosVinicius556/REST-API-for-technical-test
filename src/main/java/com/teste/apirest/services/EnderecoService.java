@@ -11,7 +11,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.teste.apirest.entities.Endereco;
-import com.teste.apirest.entities.Pessoa;
 import com.teste.apirest.entities.enums.EnderecoMapMarker;
 import com.teste.apirest.repositories.EnderecoRepository;
 import com.teste.apirest.repositories.PessoaRepository;
